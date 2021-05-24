@@ -1,0 +1,61 @@
+server:
+  port: 2091
+
+spring:
+  application:
+    name: doctorstrange
+  profiles:
+    active: dev
+  tomcat:
+    uri-encoding: UTF-8
+
+  rabbitmq:
+    host: 10.1.1.156
+    port: 5672
+    username: yyuser
+    password: ipharmacare
+    virtual-host: ipharmacare
+
+dubbo:
+  application:
+    name: doctorstange
+  registry:
+    address: zookeeper://10.1.1.201:2181
+    check: false
+  protocol:
+    name: dubbo
+    port: 20985
+    threadpool: limited
+    corethreads: 10
+    threads: 500
+  consumer:
+    check: false
+
+mybatis:
+  configLocation: classpath:/mybatis/mybatis.xml
+  mapperLocations: classpath:mybatis/mapper/**/*.xml
+
+mysql:
+  datasource:
+    minIdle: 5
+    initialSize: 10
+    maxActive: 200
+    maxWait: 1000
+    useUnfairLock: true
+
+    url: jdbc:mysql://10.1.1.120:3306/ipharmacare_review?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&autoReconnect=true&failOverReadOnly=false
+    username: yyuser
+    password: iPh@23ysq!
+    driverClassName: com.mysql.cj.jdbc.Driver
+    validationQuery: SELECT 1
+    connectionInitSqls: set names utf8mb4
+
+analyseConsumer:
+  count: 2
+  config:
+    queueName: review:pushSampleToReport
+    exchangeName: reviewSamplePushReport
+    exchangeType: direct
+    durable: true
+    routingKey: analyse
+    prefetchCount: 20

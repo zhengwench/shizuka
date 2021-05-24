@@ -1,0 +1,10 @@
+//apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile project(':shizuka-domain')
+    compile project(':shizuka-service')
+    compile project(':shizuka-infrastructure')
+
+    compile rootProject.ext.dependencies["spring-boot-starter"]
+    compile rootProject.ext.dependencies["spring-boot-starter-web"]
+}

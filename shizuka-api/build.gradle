@@ -1,0 +1,17 @@
+publishing {
+    publications {
+        myLibrary(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name = 'muzhi'
+            url = layout.buildDirectory.dir("repo")
+        }
+    }
+}
+
+dependencies {
+}

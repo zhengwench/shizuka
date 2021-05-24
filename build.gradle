@@ -1,0 +1,60 @@
+//gradle自身需要的资源加载
+apply from: "config.gradle"
+
+buildscript {
+
+    ext {
+        springBootVersion = '2.3.11.RELEASE'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+//作用域所有模块
+allprojects {
+    group 'shizuka'
+    version '1.0-SNAPSHOT'
+}
+
+//作用域所有子模块
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: "io.spring.dependency-management"
+    apply plugin: "java-library"
+    apply plugin: "maven-publish"
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies{
+        //这里如果配置了jar包依赖，所有子项目共享，使用了gradle的依赖传递特性。
+
+        testCompile rootProject.ext.dependencies["junit"]
+
+        compile rootProject.ext.dependencies["slf4j-api"]
+        compile rootProject.ext.dependencies["logback-core"]
+        compile rootProject.ext.dependencies["logback-classic"]
+
+        compileOnly rootProject.ext.dependencies["lombok"]
+        annotationProcessor rootProject.ext.dependencies["lombok"]
+        testAnnotationProcessor rootProject.ext.dependencies["lombok"]
+        testCompileOnly rootProject.ext.dependencies["lombok"]
+
+        compile rootProject.ext.dependencies["commons-lang3"]
+        compile rootProject.ext.dependencies["commons-collections4"]
+
+    }
+}

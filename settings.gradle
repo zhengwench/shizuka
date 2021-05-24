@@ -1,0 +1,9 @@
+rootProject.name = 'shizuka'
+include 'shizuka-domain'
+include 'shizuka-deploy'
+include 'shizuka-web'
+include 'shizuka-api'
+include 'shizuka-biz'
+include 'shizuka-infrastructure'
+include 'shizuka-service'
+
