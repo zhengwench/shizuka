@@ -7,4 +7,6 @@ dependencies {
 
     compile rootProject.ext.dependencies["spring-boot-starter"]
     compile rootProject.ext.dependencies["spring-boot-starter-web"]
+    compile rootProject.ext.dependencies["commons-io"]
+    compile rootProject.ext.dependencies["commons-fileupload"]
 }
