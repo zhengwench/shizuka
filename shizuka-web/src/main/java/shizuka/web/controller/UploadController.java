@@ -2,18 +2,17 @@ package shizuka.web.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.MultipartResolver;
-import shizuka.web.component.response.ResponseResult;
+import shizuka.query.UploadQueryService;
+import shizuka.web.response.ResponseResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -26,6 +25,15 @@ public class UploadController extends BaseController {
 
     @Autowired
     private MultipartResolver multipartResolver;
+
+    @Autowired
+    private UploadQueryService uploadQueryService;
+
+    @RequestMapping(value = "/upload/index")
+    public ResponseResult index(){
+        String res = uploadQueryService.test();
+        return ResponseResult.ok(res);
+    }
 
     /**
      * 上传图片，单个参数传多个文件

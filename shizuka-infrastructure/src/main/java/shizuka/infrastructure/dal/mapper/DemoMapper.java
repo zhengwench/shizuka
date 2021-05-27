@@ -1,4 +1,4 @@
-package shizuka.infrastructure.mapper;
+package shizuka.infrastructure.dal.mapper;
 
 import org.apache.ibatis.annotations.Param;
 

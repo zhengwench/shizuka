@@ -1,4 +1,4 @@
-package shizuka.web.component.response;
+package shizuka.web.response;
 
 import lombok.Data;
 
@@ -19,9 +19,15 @@ public class ResponseResult<T> {
     public ResponseResult() {
     }
 
+    public static <T> ResponseResult<T> ok() {
+        ResponseResult<T> result = new ResponseResult();
+        result.setSuccess(true);
+        return result;
+    }
+
     public static <T> ResponseResult<T> ok(T data) {
         ResponseResult<T> result = new ResponseResult();
-        //result.setSuccess(true);
+        result.setSuccess(true);
         result.setResult(data);
         return result;
     }

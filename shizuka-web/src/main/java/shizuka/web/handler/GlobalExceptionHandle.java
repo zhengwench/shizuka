@@ -1,6 +1,6 @@
-package shizuka.web.component.handler;
+package shizuka.web.handler;
 
-import shizuka.web.component.response.ResponseResult;
+import shizuka.web.response.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

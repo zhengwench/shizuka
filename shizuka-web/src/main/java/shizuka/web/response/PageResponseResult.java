@@ -1,4 +1,4 @@
-package shizuka.web.component.response;
+package shizuka.web.response;
 
 import lombok.Data;
 

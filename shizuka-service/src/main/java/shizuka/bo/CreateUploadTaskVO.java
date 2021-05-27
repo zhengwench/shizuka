@@ -1,4 +1,4 @@
-package shizuka.web.upload.vo;
+package shizuka.bo;
 
 /**
  * @Author: siskin_zh

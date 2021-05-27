@@ -1,4 +1,4 @@
-package shizuka.web.upload.vo;
+package shizuka.bo;
 
 import lombok.Data;
 

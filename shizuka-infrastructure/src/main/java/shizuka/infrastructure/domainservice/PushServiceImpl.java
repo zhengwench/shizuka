@@ -1,4 +1,4 @@
-package shizuka.infrastructure.service;
+package shizuka.infrastructure.domainservice;
 
 import shizuka.domain.service.push.PushService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

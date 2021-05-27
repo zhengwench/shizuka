@@ -5,6 +5,8 @@ dependencies {
 
     compile rootProject.ext.dependencies["spring-core"]
     compile rootProject.ext.dependencies["spring-context"]
+    compile rootProject.ext.dependencies["spring-aop"]
+    compile rootProject.ext.dependencies["aspectjweaver"]
 
     compile(rootProject.ext.dependencies["mybatis-spring-boot-starter"]){
         exclude group :'org.slf4j'
