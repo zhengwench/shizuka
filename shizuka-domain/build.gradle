@@ -1,3 +1,6 @@
 dependencies {
     compile rootProject.ext.dependencies["jackson-core"]
+    compile rootProject.ext.dependencies["jackson-databind"]
+    compile rootProject.ext.dependencies["jackson-annotations"]
+    compile rootProject.ext.dependencies["jackson-dataformat-yaml"]
 }

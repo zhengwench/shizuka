@@ -1,5 +1,9 @@
 apply plugin: 'org.springframework.boot'
 
+bootJar {
+    archiveFileName = "shizuka-deploy.jar"
+}
+
 dependencies {
     compile project(':shizuka-web')
     compile project(':shizuka-biz')

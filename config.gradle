@@ -26,7 +26,11 @@ ext.dependencies = [
         "mysql-connector-java": "mysql:mysql-connector-java:8.0.19",
         "druid-spring-boot-starter":"com.alibaba:druid-spring-boot-starter:1.1.23",
 
-        "jackson-core":"com.fasterxml.jackson.core:jackson-core:2.11.1",
+        "jackson-core":"com.fasterxml.jackson.core:jackson-core:2.12.4",
+        "jackson-databind":"com.fasterxml.jackson.core:jackson-databind:2.12.4",
+        "jackson-annotations":"com.fasterxml.jackson.core:jackson-annotations:2.12.4",
+        "jackson-dataformat-yaml":"com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.4",
+
 
         'dubbo':"org.apache.dubbo:dubbo:2.7.0",
         'dubbo-spring-boot-starter':"org.apache.dubbo:dubbo-spring-boot-starter:2.7.0",
